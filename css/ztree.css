@@ -1,0 +1,189 @@
+/**选择人员弹框*/
+.page-tree{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2009;
+    background-color: #ffffff;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.page-tree .tree-wrap,.page-tree .search-result-wrap {
+    width: 100%;
+    height: 65%;
+    margin-top: 0;
+    overflow: scroll;
+    background-color: #fafafa;
+}
+
+.page-tree .selected-person {
+    width: 100%;
+    height: 15%;
+    display: inline-block;
+    overflow: scroll;
+    clear: both;
+}
+.page-tree .selected-person .person-item {
+    width: 18%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    float: left;
+    text-align: center;
+    background-color: #d6edfe;
+    margin-left: 1rem;
+    margin-top: 0.6rem;
+    border-radius: 5px;
+}
+/*.ztree li :before{*/
+    /*content: '';*/
+    /*width: 100%;*/
+    /*height: 1px;*/
+    /*border-top: 1px solid #000000;*/
+/*}*/
+.ztree li a {
+    color: #6d6d72;
+    line-height: 2;
+    width: 100%;
+    display: block;
+}
+
+
+.ztree .icon_close {
+    width: 14px;
+    height: 7px;
+    display: inline-block;
+    background-image: url("../images/icon_open.png");
+    background-size: cover;
+    transform: rotate(-90deg);
+}
+
+.ztree .icon_open {
+    width: 14px;
+    height: 7px;
+    display: inline-block;
+    background-image: url("../images/icon_open.png");
+    background-size: cover;
+}
+
+.ztree li ul {
+    padding-left: 25px;
+}
+
+.ztree .selected_icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    float: right;
+    background-image: url("../images/selected_icon.png");
+    background-size: cover;
+
+}
+
+.page-tree .btn-wrap{
+    width: 18%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+
+    text-align: center;
+    /*background-color: #d6edfe;*/
+    /*margin-top: 1rem;*/
+    border-radius: 5px;
+}
+.page-tree .tree-btn-wrap {
+    height: 6%;
+}
+.page-tree .cancel-btn-tree {
+    color: #787878;
+    border: 1px solid #787878;
+    float: left;
+    margin-left: 1rem;
+
+}
+.page-tree .submit-btn-tree {
+    color: #0894ec;
+    border: 1px solid #0894ec;
+    float: right;
+    margin-right: 1rem;
+}
+.page-tree .tree-search-warp {
+    height: 50px;
+    background-color: #0093ff;
+}
+.page-tree .search-bt {
+    width: 90%;
+    height: 30px;
+    position: relative;
+    left: 5%;
+    top: 20%;
+    background-color: #56b7ff;
+    border-radius: 20px;
+}
+.page-tree .search-bt .img-wrap {
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    left: 45%;
+    /*top: 6px;*/
+    color: #fff;
+}
+.page-tree .search-bt .img-wrap img{
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top:4px;
+}
+.page-tree .search-bt .img-wrap span{
+   margin-left: 10px;
+}
+.page-tree .input-wrap img {
+    width: 17px;
+    height: 17px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+.page-tree .input-wrap input {
+    border: none;
+    height: 30px;
+    position: relative;
+    left: 15px;
+    background-color: #56b7ff;
+    color: #fff;
+}
+.page-tree .search-result-wrap ul {
+    /*padding-top: 0.5rem;*/
+    background-color: #fff;
+}
+.page-tree .search-result-wrap li{
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+.page-tree .search-result-wrap .userimg-wrap {
+    /*float: left;*/
+}
+.page-tree .search-result-wrap li img {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 0.3rem;
+}
+.page-tree .search-result-wrap .user-name {
+    float: left;
+    position: relative;
+    left: 0.6rem;
+}
+.page-tree .search-result-wrap .user-position {
+    float: left;
+    position: relative;
+    left: 1rem;
+    color: #d9d9d9;
+
+}

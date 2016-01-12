@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/ztree.css">
+</head>
+<body>
+<div>
+    <div class="item-input">
+        <div class="choose-person">请选择人员</div>
+    </div>
+</div>
+
+
+<div class="page-tree" style="display: none">
+    <div class="tree-wrap content-block" id="tree-wrap"></div>
+    <div class="tree-btn-wrap">
+        <div class="cancel-btn-tree btn-wrap ">取消</div>
+        <div class="submit-btn-tree btn-wrap ">确定</div>
+    </div>
+    <div class=" selected-person"></div>
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/zepto.tree.js"></script>
+<script>
+    $('.choose-person').on('click',function(){
+        $('.page-tree').show();
+        initTree();
+    });
+
+    //小实例
+        function initTree() {
+        var settings = {
+            childKey: 'children',
+            hasChildKey: 'hasChildren',
+            callback: {
+                getNodesData: getData,
+                onSelected: setSelectedInfo
+            }
+        };
+        var initData = getData();
+        var topID = initData[0].id;
+        var topName = initData[0].name;
+        var treeNodesData = {
+            id: topID,
+            name: topName,
+            children: getData(topID)
+        };
+
+        var $treeOrg = $('#tree-wrap');
+        $.fn.tree.init($treeOrg, settings, treeNodesData);
+    }
+    //这里去后台获取数据
+    function getData(id) {
+        var arr = [];
+        for (var i = 0; i < 3; i++) {
+            var node = {};
+            node.id = i;
+            node.name = '张三' + i;
+            node.hasChildren = true;
+            arr.push(node);
+        }
+
+        return arr;
+    }
+    ;
+    //选中之后的操作
+    function setSelectedInfo() {
+        var name = $(me).find('.node_name').text();
+        console.log(name);
+    }
+
+</script>
+</body>
+</html>
