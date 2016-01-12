@@ -26,30 +26,19 @@ $(function () {
         $.fn.tree.init($treeOrg, settings, treeNodesData);
 
     }
+    //这里去后台获取数据
     function getData(id) {
-        $.showPreloader('加载中，请稍后...');
-        var nodesData = null;
-        var params = {Data: JSON.stringify({ID: id ? id : deptId})};
-        $.OAajax({
-            url: Config.urlMap.getOrgs,
-            data: params,
-            async: false,
-            success: function (resp) {
-                $.hidePreloader();
-                if (!resp) {
-                    $.alert('系统异常，请稍后再试。');
-                    return;
-                }
-                if (resp.ReturnCode == 1) {
-                    nodesData = formatNodesData(resp.Data);
-                    return;
-                }
-                $.alert(resp.ReturnMessage);
-            }
-        });
+        var arr = [];
+        for (var i = 0; i < 3; i++) {
+            var node = {};
+            node.id = i;
+            node.name = '张三' + i;
+            node.hasChildren = true;
+            arr.push(node);
+        }
 
-        return nodesData;
-    };
+        return arr;
+    }
 
     function formatNodesData(data) {
         var arr = [];
@@ -260,7 +249,7 @@ $(function () {
     });
     function getPageTreeTpl(){
         return[
-            '<div class="page-tree">',
+            '<div class="page-tree" style="display: none;">',
             '<div class="tree-search-warp">',
             '<div class="search-bt">',
             '<div class="img-wrap">',
