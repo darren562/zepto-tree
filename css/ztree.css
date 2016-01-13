@@ -1,3 +1,21 @@
+
+/*@media screen and (min-width:460px) and (max-width: 540px){*/
+    /*html{*/
+        /*font-size:20px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width:321px) and (max-width:459px){*/
+    /*html{*/
+        /*font-size:14px;*/
+    /*}*/
+/*}*/
+/*@media (max-width:320px){*/
+    /*html{*/
+        /*font-size:12px;*/
+
+    /*}*/
+/*}*/
+
 /**选择人员弹框*/
 .page-tree{
     display: none;
@@ -10,6 +28,9 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+.page-tree ul {
+    list-style: none;
 }
 
 .page-tree .tree-wrap,.page-tree .search-result-wrap {

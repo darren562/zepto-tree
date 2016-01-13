@@ -26,34 +26,25 @@ $(function () {
         $.fn.tree.init($treeOrg, settings, treeNodesData);
 
     }
-    //这里去后台获取数据
+    //这里去后台获取数据(模拟数据)
     function getData(id) {
         var arr = [];
-        for (var i = 0; i < 3; i++) {
+        for (var num =0; num < 4; num++) {
             var node = {};
-            node.id = i;
-            node.name = '张三' + i;
-            node.hasChildren = true;
-            arr.push(node);
-        }
-
-        return arr;
-    }
-
-    function formatNodesData(data) {
-        var arr = [];
-        $.each(data, function (i, item) {
-            var node = {};
-            node.id = item.id;
-            node.UserID = item.UserID;
-            node.name = item.displayName;
-            if (item.hasChildren) {
+            node.id = Math.ceil(Math.random()*100);
+            node.UserID = node.id;//UserID 可以跟node.id相同也可以不同
+            node.name = '张三' + node.id;
+            if(num == 2 || num == 3){
+                node.hasChildren = false;
+            }else{
                 node.hasChildren = true;
             }
             arr.push(node);
-        });
+
+        }
         return arr;
-    };
+    }
+
     function setSelectedInfo() {
         var me = this;
 
@@ -82,7 +73,6 @@ $(function () {
         var id = $(me).parent().attr('id');
         var userId = $(me).parent().attr('data-userid');
         var name = $(me).find('.node_name').text();
-        name = name.substr(0, name.indexOf('('));
         var personInfo = {id: id, userId: userId, name: name};
         var $tpl = $(getPersonItemTpl(personInfo));
         $('.selected-person').append($tpl);
@@ -112,7 +102,6 @@ $(function () {
     };
 
     $('.cancel-btn-tree').on('click', function () {
-        OA.AppShowReturnBtn();
         $('.page-tree').hide();
         initPageTree();
     });
@@ -143,7 +132,6 @@ $(function () {
         //sessionStorage.setItem('selectedPerson',JSON.stringify(arr));
 
         $('.page-tree').hide();
-        OA.AppShowReturnBtn();
         setSelectedPerson(JSON.stringify(arr));
         //window.location.href = document.referrer;
     });
@@ -192,7 +180,6 @@ $(function () {
             data: params,
             async: false,
             success: function (resp) {
-                $.hidePreloader();
                 if (!resp) {
                     $.alert('系统异常，请稍后再试。');
                     return;
@@ -253,10 +240,10 @@ $(function () {
             '<div class="tree-search-warp">',
             '<div class="search-bt">',
             '<div class="img-wrap">',
-            '<img src="../images/search-w.png"><span>搜索</span>',
+            '<img src="images/search-w.png"><span>搜索</span>',
             '</div>',
             '<div class="input-wrap" style="display: none">',
-            '<img src="../images/search-w.png">',
+            '<img src="images/search-w.png">',
             '<input class="keyword-input" id="keyword-input" type="text" style="">',
             '</div>',
             '</div>',
