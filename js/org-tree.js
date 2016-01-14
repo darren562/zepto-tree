@@ -168,38 +168,31 @@ $(function () {
         $(this).find('.img-wrap').hide();
         $('.page-tree .input-wrap').show().find('input').focus();
     });
-// auto complete
-    //用原生，因为zepto对keyup支持有问题
-    document.getElementById('keyword-input').onkeyup = function () {
+    //模糊搜索
+    $('#keyword-input').on('input',function(){
+        if($(this).prop('comStart')) return;    // 中文输入过程中不截断
+        //console.log(this.value);
         searchUsers(this.value);
-    }
+    }).on('compositionstart',function(){
+        $(this).prop('comStart', true);
+        //console.log('中文输入：开始');
+    }).on('compositionend', function(){
+        $(this).prop('comStart', false);
+        //console.log('中文输入：结束');
+    });
+
+
     function searchUsers(kw) {
-        var params = {Data: JSON.stringify({KeyWord: kw})};
-        $.OAajax({
-            url: Config.urlMap.getUsersByKeyword,
-            data: params,
-            async: false,
-            success: function (resp) {
-                if (!resp) {
-                    $.alert('系统异常，请稍后再试。');
-                    return;
-                }
-                if (resp.ReturnCode == 1) {
-                    //$.alert(JSON.stringify(resp));
-                    showSearchResult(resp);
-                    return;
-                }
-                $.alert(resp.ReturnMessage);
-            }
-        });
+        //模拟数据
+        var sourceData = [{id:1,name:'张三01'},{id:2,name:'张三02'},{id:3,name:'张三03'},{id:4,name:'张三04'},{id:5,name:'张三05'}];
+        showSearchResult(sourceData);
     }
 
-    function showSearchResult(resp) {
+    function showSearchResult(list) {
         $('#tree-wrap').hide();
         $('.search-result-wrap').show();
         var $ul = $('.search-result-wrap ul').empty();
 
-        var list = resp.Data;
 
         $.each(list, function (i, item) {
             //var liTpl = '<li class="li-item" data-id="'+item.UserId+'">'+item.UserName+'</li>'
@@ -213,11 +206,10 @@ $(function () {
             item.UserImg = '../images/pic.png';
         }
         return [
-            '<li class="li-item" data-id="' + item.UserId + '">',
+            '<li class="li-item" data-id="' + item.id + '">',
             //'<div class="userimg-wrap"><img src="'+item.UserImg+'"></div>',
-            '<img src="' + item.UserImg + '">',
-            '<div class="user-name">' + item.UserName + '</div>',
-            '<div class="user-position">（' + item.Post + '）</div>',
+            //'<img src="' + item.UserImg + '">',
+            '<div class="user-name">' + item.name + '</div>',
             '</li>'
         ].join('');
     }

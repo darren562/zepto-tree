@@ -31,48 +31,6 @@
         OrgTree.initTree();
     });
 
-    //小实例
-//        function initTree() {
-//        var settings = {
-//            childKey: 'children',
-//            hasChildKey: 'hasChildren',
-//            callback: {
-//                getNodesData: getData,
-//                onSelected: setSelectedInfo
-//            }
-//        };
-//        var initData = getData();
-//        var topID = initData[0].id;
-//        var topName = initData[0].name;
-//        var treeNodesData = {
-//            id: topID,
-//            name: topName,
-//            children: getData(topID)
-//        };
-//
-//        var $treeOrg = $('#tree-wrap');
-//        $.fn.tree.init($treeOrg, settings, treeNodesData);
-//    }
-//    //这里去后台获取数据
-//    function getData(id) {
-//        var arr = [];
-//        for (var i = 0; i < 3; i++) {
-//            var node = {};
-//            node.id = i;
-//            node.name = '张三' + i;
-//            node.hasChildren = true;
-//            arr.push(node);
-//        }
-//
-//        return arr;
-//    }
-//    ;
-//    //选中之后的操作
-//    function setSelectedInfo() {
-//        var name = $(me).find('.node_name').text();
-//        console.log(name);
-//    }
-
 </script>
 </body>
 </html>
