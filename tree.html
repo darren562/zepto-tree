@@ -9,7 +9,7 @@
 <body>
 <div>
     <div class="item-input">
-        <button class="choose-person">点击请选择人员</button>
+        <button class="doselect">请选择</button>
     </div>
 </div>
 
@@ -26,7 +26,7 @@
 <script src="js/zepto.tree.js"></script>
 <script src="js/org-tree.js"></script>
 <script>
-    $('.choose-person').on('click',function(){
+    $('.doselect').on('click',function(){
         $('.page-tree').show();
         OrgTree.initTree();
     });
