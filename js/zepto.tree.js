@@ -1,6 +1,4 @@
-/**
- * Created by wangdongdong on 2015/12/7.
- */
+
 (function ($) {
     var settings = {
         treeId: "",

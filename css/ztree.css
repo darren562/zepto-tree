@@ -19,7 +19,7 @@ a, button, input, select, textarea {
     outline: 0;
 }
 /**选择人员弹框*/
-.page-tree{
+.zepto-tree{
     display: none;
     position: absolute;
     top: 0;
@@ -32,10 +32,10 @@ a, button, input, select, textarea {
     height: 100%;
     overflow: auto;
 }
-.page-tree ul {
+.zepto-tree ul {
     list-style: none;
 }
-.page-tree .tree-wrap,.page-tree .search-result-wrap {
+.zepto-tree .tree-wrap,.zepto-tree .search-result-wrap {
     width: 100%;
     height: 65%;
     margin-top: 0;
@@ -43,14 +43,14 @@ a, button, input, select, textarea {
     background-color: #fafafa;
 }
 
-.page-tree .selected-person {
+.zepto-tree .selected-person {
     width: 100%;
     height: 15%;
     display: inline-block;
     overflow: scroll;
     clear: both;
 }
-.page-tree .selected-person .person-item {
+.zepto-tree .selected-person .person-item {
     width: 18%;
     height: 1.5rem;
     line-height: 1.5rem;
@@ -106,7 +106,7 @@ a, button, input, select, textarea {
 
 }
 
-.page-tree .btn-wrap{
+.zepto-tree .btn-wrap{
     width: 18%;
     height: 1.5rem;
     line-height: 1.5rem;
@@ -116,28 +116,28 @@ a, button, input, select, textarea {
     /*margin-top: 1rem;*/
     border-radius: 5px;
 }
-.page-tree .tree-btn-wrap {
+.zepto-tree .tree-btn-wrap {
     height: 6%;
 }
-.page-tree .cancel-btn-tree {
+.zepto-tree .cancel-btn-tree {
     color: #787878;
     border: 1px solid #787878;
     float: left;
     margin-left: 1rem;
 
 }
-.page-tree .submit-btn-tree {
+.zepto-tree .submit-btn-tree {
     color: #0894ec;
     border: 1px solid #0894ec;
     float: right;
     margin-right: 1rem;
 }
-.page-tree .tree-search-warp {
+.zepto-tree .tree-search-warp {
     /*height: 50px;*/
     height: 2.5rem;
     background-color: #0093ff;
 }
-.page-tree .search-bt {
+.zepto-tree .search-bt {
     width: 90%;
     /*height: 30px;*/
     height: 1.5rem;
@@ -148,7 +148,7 @@ a, button, input, select, textarea {
     /*border-radius: 20px;*/
     border-radius: 1rem;
 }
-.page-tree .search-bt .img-wrap {
+.zepto-tree .search-bt .img-wrap {
     /*height: 30px;*/
     /*line-height: 30px;*/
     height: 1.5rem;
@@ -158,7 +158,7 @@ a, button, input, select, textarea {
     /*top: 6px;*/
     color: #fff;
 }
-.page-tree .search-bt .img-wrap img{
+.zepto-tree .search-bt .img-wrap img{
     /*    width: 17px;
         height: 17px;*/
     width: .85rem;
@@ -167,11 +167,11 @@ a, button, input, select, textarea {
     /*top:4px;*/
     top: .2rem;
 }
-.page-tree .search-bt .img-wrap span{
+.zepto-tree .search-bt .img-wrap span{
     /*margin-left: 10px;*/
     margin-left: .5rem;
 }
-.page-tree .input-wrap img {
+.zepto-tree .input-wrap img {
     /*
         width: 17px;
         height: 17px;
@@ -182,7 +182,7 @@ a, button, input, select, textarea {
     left: .5rem;
     top: .25rem;
 }
-.page-tree .input-wrap input {
+.zepto-tree .input-wrap input {
     border: none;
     height: 1.4rem;
     position: relative;
@@ -190,20 +190,20 @@ a, button, input, select, textarea {
     background-color: #56b7ff;
     color: #fff;
 }
-.page-tree .search-result-wrap ul {
+.zepto-tree .search-result-wrap ul {
     /*padding-top: 0.5rem;*/
     background-color: #fff;
 }
-.page-tree .search-result-wrap li{
+.zepto-tree .search-result-wrap li{
     width: 100%;
     height: 3rem;
     line-height: 3rem;
     border-bottom: 1px solid #d9d9d9;
 }
-.page-tree .search-result-wrap .userimg-wrap {
+.zepto-tree .search-result-wrap .userimg-wrap {
     /*float: left;*/
 }
-.page-tree .search-result-wrap li img {
+.zepto-tree .search-result-wrap li img {
     width: 2.4rem;
     height: 2.4rem;
     display: inline-block;
@@ -211,12 +211,12 @@ a, button, input, select, textarea {
     position: relative;
     top: 0.3rem;
 }
-.page-tree .search-result-wrap .user-name {
+.zepto-tree .search-result-wrap .user-name {
     float: left;
     position: relative;
     left: 0.6rem;
 }
-.page-tree .search-result-wrap .user-position {
+.zepto-tree .search-result-wrap .user-position {
     float: left;
     position: relative;
     left: 1rem;

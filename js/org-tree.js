@@ -102,13 +102,13 @@ $(function () {
     };
 
     $('.cancel-btn-tree').on('click', function () {
-        $('.page-tree').hide();
+        $('.zepto-tree').hide();
         initPageTree();
     });
     function initPageTree() {
 
-        $('.page-tree .img-wrap').show();
-        $('.page-tree .input-wrap').hide();
+        $('.zepto-tree .img-wrap').show();
+        $('.zepto-tree .input-wrap').hide();
         $('.tree-wrap').show();
         $('.search-result-wrap').hide().find('ul').empty();
         $('.keyword-input').val('');
@@ -131,7 +131,7 @@ $(function () {
         });
         //sessionStorage.setItem('selectedPerson',JSON.stringify(arr));
 
-        $('.page-tree').hide();
+        $('.zepto-tree').hide();
         setSelectedPerson(JSON.stringify(arr));
         //window.location.href = document.referrer;
     });
@@ -164,9 +164,9 @@ $(function () {
         setSelectedPersonCount();
     });
 
-    $('.page-tree .search-bt').on('click', function () {
+    $('.zepto-tree .search-bt').on('click', function () {
         $(this).find('.img-wrap').hide();
-        $('.page-tree .input-wrap').show().find('input').focus();
+        $('.zepto-tree .input-wrap').show().find('input').focus();
     });
     //模糊搜索
     $('#keyword-input').on('input',function(){
@@ -228,7 +228,7 @@ $(function () {
     });
     function getPageTreeTpl(){
         return[
-            '<div class="page-tree" style="display: none;">',
+            '<div class="zepto-tree" style="display: none;">',
             '<div class="tree-search-warp">',
             '<div class="search-bt">',
             '<div class="img-wrap">',
