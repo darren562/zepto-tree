@@ -1,2 +1,2 @@
 # zepto-tree
-基于zepto的移动端树形结构插件
+A tree plugin based on zepto
