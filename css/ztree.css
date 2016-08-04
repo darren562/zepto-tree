@@ -51,12 +51,13 @@ a, button, input, select, textarea {
     clear: both;
 }
 .zepto-tree .selected-person .person-item {
+    color: #fff;
     width: 18%;
     height: 1.5rem;
     line-height: 1.5rem;
     float: left;
     text-align: center;
-    background-color: #d6edfe;
+    background-color: #ffA500;
     margin-left: 1rem;
     margin-top: 0.6rem;
     border-radius: 5px;
@@ -135,7 +136,7 @@ a, button, input, select, textarea {
 .zepto-tree .tree-search-warp {
     /*height: 50px;*/
     height: 2.5rem;
-    background-color: #0093ff;
+    background-color: #FF8C00;
 }
 .zepto-tree .search-bt {
     width: 90%;
@@ -144,7 +145,7 @@ a, button, input, select, textarea {
     position: relative;
     left: 5%;
     top: 20%;
-    background-color: #56b7ff;
+    background-color: #ffA500;
     /*border-radius: 20px;*/
     border-radius: 1rem;
 }
@@ -187,7 +188,7 @@ a, button, input, select, textarea {
     height: 1.4rem;
     position: relative;
     left: .75rem;
-    background-color: #56b7ff;
+    background-color: #ffA500;
     color: #fff;
 }
 .zepto-tree .search-result-wrap ul {
