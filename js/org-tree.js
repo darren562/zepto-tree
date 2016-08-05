@@ -3,7 +3,7 @@ $(function () {
     $('body').append(getPageTreeTpl());
 
     var OrgTree = {};
-    var deptId = '';//默认全公司
+    var deptId = '';//default all
     OrgTree.initTree = function () {
         var settings = {
             childKey: 'children',
@@ -26,14 +26,14 @@ $(function () {
         $.fn.tree.init($treeOrg, settings, treeNodesData);
 
     }
-    //这里去后台获取数据(模拟数据)
+    //get data from server(this give you a json data)
     function getData(id) {
         var arr = [];
         for (var num =0; num < 4; num++) {
             var node = {};
             node.id = Math.ceil(Math.random()*100);
-            node.UserID = node.id;//UserID 可以跟node.id相同也可以不同
-            node.name = '张三' + node.id;
+            node.UserID = node.id;//UserID
+            node.name = 'zhangsan' + node.id;
             if(num == 2 || num == 3){
                 node.hasChildren = false;
             }else{
@@ -57,7 +57,7 @@ $(function () {
         } else {
             var userId = $(me).parent('li').attr('data-userid');
             var $existItem = $('.person-item[data-userid="'+userId+'"]');
-            if ($existItem && $existItem.length > 0){//已经被搜索选中
+            if ($existItem && $existItem.length > 0){//Is already selected
                 return ;
             }
             setMarkAndSelectedPerson(me);
@@ -91,9 +91,9 @@ $(function () {
     function setSelectedPersonCount() {
         var count = $('.selected-person .person-item').length;
         if (count > 0) {
-            $('.submit-btn-tree').text('确定(' + count + ')');
+            $('.submit-btn-tree').text('submit(' + count + ')');
         } else {
-            $('.submit-btn-tree').text('确定');
+            $('.submit-btn-tree').text('submit');
         }
 
     };
@@ -119,7 +119,7 @@ $(function () {
         //var selectedPerson =
         var $personCnt = $('.selected-person .person-item');
         if ($personCnt.length == 0) {
-            $.alert('请选择人员');
+            $.alert('please select one ');
             return;
         }
         var arr = [];
@@ -168,23 +168,23 @@ $(function () {
         $(this).find('.img-wrap').hide();
         $('.zepto-tree .input-wrap').show().find('input').focus();
     });
-    //模糊搜索
+    //Fuzzy search
     $('#keyword-input').on('input',function(){
-        if($(this).prop('comStart')) return;    // 中文输入过程中不截断
+        if($(this).prop('comStart')) return;    // this is a solution for chinese
         //console.log(this.value);
         searchUsers(this.value);
     }).on('compositionstart',function(){
         $(this).prop('comStart', true);
-        //console.log('中文输入：开始');
+        //console.log('chinese input：start');
     }).on('compositionend', function(){
         $(this).prop('comStart', false);
-        //console.log('中文输入：结束');
+        //console.log('chinese input：end');
     });
 
 
     function searchUsers(kw) {
-        //模拟数据
-        var sourceData = [{id:1,name:'张三01'},{id:2,name:'张三02'},{id:3,name:'张三03'},{id:4,name:'张三04'},{id:5,name:'张三05'}];
+        //yout data
+        var sourceData = [{id:1,name:'zhangsan01'},{id:2,name:'zhangsan02'},{id:3,name:'zhangsan03'},{id:4,name:'zhangsan04'},{id:5,name:'zhangsan05'}];
         showSearchResult(sourceData);
     }
 
@@ -219,7 +219,7 @@ $(function () {
         var name = $(this).find('.user-name').text();
         var personInfo = {id: userId, userId: userId, name: name};
         var $existItem = $('.person-item[data-userid="'+userId+'"]');
-        if (!($existItem && $existItem.length > 0)) {//没有被选中
+        if (!($existItem && $existItem.length > 0)) {//not be selected
             var $tpl = $(getPersonItemTpl(personInfo));
             $('.selected-person').append($tpl);
         }
@@ -232,7 +232,7 @@ $(function () {
             '<div class="tree-search-warp">',
             '<div class="search-bt">',
             '<div class="img-wrap">',
-            '<img src="images/search-w.png"><span>搜索</span>',
+            '<img src="images/search-w.png"><span>search</span>',
             '</div>',
             '<div class="input-wrap" style="display: none">',
             '<img src="images/search-w.png">',
@@ -245,8 +245,8 @@ $(function () {
             '<ul></ul>',
             '</div>',
             '<div class="tree-btn-wrap">',
-            '<div class="cancel-btn-tree btn-wrap ">取消</div>',
-            '<div class="submit-btn-tree btn-wrap ">确定</div>',
+            '<div class="cancel-btn-tree btn-wrap ">cancel</div>',
+            '<div class="submit-btn-tree btn-wrap ">submit</div>',
             '</div>',
             '<div class=" selected-person"></div>',
             '</div>',

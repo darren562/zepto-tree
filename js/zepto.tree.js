@@ -56,7 +56,7 @@
                     $ul.removeClass('close').addClass('open');
                     $icon.removeClass('icon_close').addClass('icon_open');
                 }else{
-                    var treeNodesData = null;//从后台获取数据
+                    var treeNodesData = null;//get data from server
                     if(typeof settings.callback.getNodesData == 'function'){
                         treeNodesData = settings.callback.getNodesData.call(this,id);
                     }
@@ -101,7 +101,7 @@
         var $treeObj = settings.treeObj,
             childData = nodesData[settings.childKey];
 
-        var $topUl = $(getTopTpl());//最顶上的
+        var $topUl = $(getTopTpl());//the topside ui
         var $topLi = $(getChildTpl((nodesData)));
         $topLi.find('.tree-btn').addClass('icon_open');
 
@@ -111,7 +111,7 @@
 
 
 
-        //设置分支
+        //set children
         $.each(childData, function (i, itemData) {
             appendChildTpl($ul,itemData)
         });
