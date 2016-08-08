@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title></title>
-    <link rel="stylesheet" href="css/ztree.css">
+    <link rel="stylesheet" href="../css/ztree.css">
+    <style>
+        .choose-person{
+            width: 300px;
+            height: 150px;
+            border: 1px solid #d9d9d9;
+        }
+    </style>
 </head>
 <body>
 <div>
     <div class="item-input">
+        <div class="choose-person"></div>
         <button class="doselect">choose</button>
     </div>
 </div>
 
-<script src="js/zepto.min.js"></script>
-<script src="js/zepto.tree.js"></script>
-<script src="js/org-tree.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/zepto.tree.js"></script>
+<script src="../js/org-tree.js"></script>
 <script>
     $('.doselect').on('click',function(){
         $('.zepto-tree').show();
